@@ -1,28 +1,48 @@
 package app_users;
 
 public class employee {
-
-	public String firstName;
-	public String lastName;
-	public String userName;
-	public String email;
 	
+	//fields
+		private String firstName;
+		private String lastName;
+		private String userName;
+		private String password;
+		private String email;
+		
+		//constructors
+		public employee() {
+			System.out.println("New Employee Created!");
+		}
+		
+		// getters and setters
+		public String getFirstName() {
+			return firstName;
+		}
+		public String getFullName() {
+			return firstName + " " + lastName;
+		}
+		public String getEmail() {
+			return email;
+		}
+		public String getUserName() {
+			return userName;
+		}
+		
+		public void setFirstName(String first) {
+			this.firstName = first;
+		}
+		
+		public void setLastName(String last) {
+			this.lastName = last;
+		}
+		public void setUserName(String user) {
+			this.userName = user;
+		}
+		public void setPass(String pass) {
+			this.password = pass;
+		}
+		public void setEmail(String email) {
+			this.email = email;
+		}
 	
-	public employee(String firstname, String lastname, String username, String email) {
-		this.firstName = firstname;
-		this.lastName = lastname;
-		this.userName = username;
-		this.email = email;
-	}
-	
-	
-	public String getFirstName() {
-		return this.firstName;
-	}
-	public String getFullName() {
-		return this.firstName + " " + this.lastName;
-	}
-	public String getEmail() {
-		return this.email;
-	}
 }

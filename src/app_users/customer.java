@@ -1,39 +1,64 @@
 package app_users;
 
-public class customer {
+import java.util.Scanner;
 
-		public String firstName;
-		public String lastName;
-		public String userName;
-		protected String socialnum;
-		public String email;
-		public String phonenum;
-		public String password;
+public class customer {
+	Scanner scan = new Scanner(System.in);
+	
+		//fields
+		private String firstName;
+		private String lastName;
+		private String userName;
+		private String password;
+		private String socialnum;
+		private String email;
+		private String phonenum;
+		private int balance; 
+			
 		
-		
-		public customer(String firstname, String lastname, 
-				String username, String password, String social, 
-				String email, String phone) {
-			this.firstName = firstname;
-			this.lastName = lastname;
-			this.userName = username;
-			this.password = password;
-			this.socialnum = social;
-			this.email = email;
-			this.phonenum = phone;
+		//constructors
+		public customer() {
+			System.out.println("New Customer Created!");
 		}
 		
+		// getters and setters
 		public String getFirstName() {
-			return this.firstName;
+			return firstName;
 		}
 		public String getFullName() {
-			return this.firstName + " " + this.lastName;
+			return firstName + " " + lastName;
 		}
 		public String getEmail() {
-			return this.email;
+			return email;
 		}
-		public String getPhone() {
-			return this.phonenum;
+		public String getUserName() {
+			return userName;
+		}
+		public String getBalance() {
+			return userName;
+		}
+		
+		public void setFirstName(String first) {
+			this.firstName = first;
+		}
+		
+		public void setLastName(String last) {
+			this.lastName = last;
+		}
+		public void setUserName(String user) {
+			this.userName = user;
+		}
+		public void setPass(String pass) {
+			this.password = pass;
+		}
+		public void setEmail(String email) {
+			this.email = email;
+		}
+		public void setSocial(String social) {
+			this.socialnum = social;
+		}
+		public void setPhone(String num) {
+			this.phonenum = num;
 		}
 		
 }
