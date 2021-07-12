@@ -1,7 +1,6 @@
 drop table if exists app_user cascade;
 drop table if exists customer cascade;
 drop table if exists employee cascade;
-drop table if exists employees_customers cascade;
 
 create table app_user(
 	user_user text unique not null primary key,
@@ -36,9 +35,3 @@ references customer(customer_user);
 
 alter table app_user add foreign key (employee_userid)
 references employee(employee_user);
-
-create table if not exists employees_customers(
-	customer_user text references customer(customer_user),
-	employee_user text references employee(employee_user),
-	primary key(customer_user, employee_user)
-);
