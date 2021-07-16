@@ -1,24 +1,29 @@
-package app_users;
+package models;
 
-import java.util.Scanner;
-
-public class customer {
-	Scanner scan = new Scanner(System.in);
-	
+public class customer extends users{
 		//fields
 		private String firstName;
 		private String lastName;
-		private String userName;
-		private String password;
 		private String socialnum;
 		private String email;
 		private String phonenum;
-		private int balance; 
+		private double balance; 
 			
 		
 		//constructors
-		public customer() {
-			System.out.println("New Customer Created!");
+		public customer(String user, String pass, String first, String last) {
+			super(user, pass);
+			this.setFirstName(first);
+			this.setLastName(last);
+		}
+		public customer(String user, String pass, String first, String last, String social, String email, String phone, double funds) {
+			super(user, pass);
+			this.setFirstName(first);
+			this.setLastName(last);
+			this.setSocial(social);
+			this.setEmail(email);
+			this.setPhone(phone);
+			this.setBalance(funds);
 		}
 		
 		// getters and setters
@@ -31,11 +36,8 @@ public class customer {
 		public String getEmail() {
 			return email;
 		}
-		public String getUserName() {
-			return userName;
-		}
-		public String getBalance() {
-			return userName;
+		public double getBalance() {
+			return balance;
 		}
 		
 		public void setFirstName(String first) {
@@ -45,12 +47,7 @@ public class customer {
 		public void setLastName(String last) {
 			this.lastName = last;
 		}
-		public void setUserName(String user) {
-			this.userName = user;
-		}
-		public void setPass(String pass) {
-			this.password = pass;
-		}
+		
 		public void setEmail(String email) {
 			this.email = email;
 		}
@@ -60,5 +57,7 @@ public class customer {
 		public void setPhone(String num) {
 			this.phonenum = num;
 		}
-		
+		public void setBalance(double money) {
+			this.balance = money;
+		}
 }
